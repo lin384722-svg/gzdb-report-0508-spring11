@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>直播号订单数据播报 0508 春11期</title>
+<title>直播号订单数据播报 · 0508 春11期</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#f0f2f7;color:#222;}
-.topnav{position:sticky;top:0;z-index:100;background:#3d1a78;display:flex;align-items:center;padding:0 32px;box-shadow:0 2px 10px rgba(0,0,0,.4);}
+.topnav{position:sticky;top:0;z-index:100;background:#3d1a78;display:flex;align-items:center;padding:0 32px;box-shadow:0 2px 10px rgba(0,0,0,.4);overflow-x:auto;}
 .topnav .logo{color:white;font-weight:800;font-size:15px;padding:14px 20px 14px 0;border-right:1px solid rgba(255,255,255,.2);margin-right:8px;white-space:nowrap;}
-.topnav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 16px;font-size:13px;transition:.2s;}
+.topnav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 16px;font-size:13px;transition:.2s;white-space:nowrap;}
 .topnav a:hover{background:rgba(255,255,255,.15);color:white;}
 .header{background:linear-gradient(135deg,#3d1a78 0%,#6a1faa 60%,#9c4dcc 100%);color:white;padding:30px 40px 28px;}
 .header h1{font-size:24px;font-weight:800;letter-spacing:.5px;}
@@ -34,11 +34,14 @@ tbody tr:hover td{background:#faf5ff !important;}
 .thead-purple{background:#3d1a78;color:white;}
 .thead-green{background:#1a6e3d;color:white;}
 .thead-blue{background:#0d47a1;color:white;}
-.ch-block{margin-bottom:10px;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.06);}
-.ch-summary{background:#ede7f6;padding:10px 16px;cursor:pointer;font-weight:700;color:#4a148c;list-style:none;user-select:none;display:flex;align-items:center;gap:10px;}
+.ch-block{margin-bottom:8px;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.ch-block[open] .expand-hint{display:none;}
+.ch-summary{background:#ede7f6;padding:10px 16px;cursor:pointer;font-weight:700;color:#4a148c;list-style:none;user-select:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .ch-summary:hover{background:#d1c4e9;}
+.ch-summary::-webkit-details-marker{display:none;}
 .ch-badge{font-size:11px;font-weight:600;background:rgba(255,255,255,.7);padding:2px 8px;border-radius:12px;color:#333;}
-.ch-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+.ch-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;flex-shrink:0;}
+.expand-hint{font-size:11px;color:#9c6cd1;margin-left:auto;}
 html{scroll-behavior:smooth;}
 </style>
 </head>
@@ -52,7 +55,7 @@ html{scroll-behavior:smooth;}
 </nav>
 <div class="header">
   <h1>直播号订单数据播报 · 春11期</h1>
-  <div class="sub">数据日期：2026-05-02 ~ 2026-05-08 &nbsp;｜&nbsp; 总订单：1370 单 &nbsp;｜&nbsp; 正常班：1228 单 &nbsp;｜&nbsp; 渠道：最小年轮 / 格物致知 / 领航 / 福哥电商 / 杭州三只咪 / 自然流 / 合肥徽起 / 未知渠道</div>
+  <div class="sub">数据日期：2026-05-02 ~ 2026-05-08 &nbsp;｜&nbsp; 总订单：1370 单 &nbsp;｜&nbsp; 正常班：1003 单 &nbsp;｜&nbsp; 渠道：最小年轮 / 格物致知 / 领航 / 福哥电商 / 杭州三只咪 / 自然流 / 合肥徽起 / 未知渠道</div>
 </div>
 
 <div id="process" class="section">
@@ -61,7 +64,7 @@ html{scroll-behavior:smooth;}
 
   <div class="kpi-row">
     <div class="kpi-card" style="border-color:#3d1a78;"><div class="kpi-label">总订单</div><div class="kpi-val" style="color:#3d1a78;">1370</div></div>
-    <div class="kpi-card" style="border-color:#1a6e3d;"><div class="kpi-label">正常班</div><div class="kpi-val" style="color:#1a6e3d;">1228</div></div>
+    <div class="kpi-card" style="border-color:#1a6e3d;"><div class="kpi-label">正常班</div><div class="kpi-val" style="color:#1a6e3d;">1003</div></div>
     <div class="kpi-card" style="border-color:#c62828;"><div class="kpi-label">退款订单</div><div class="kpi-val" style="color:#c62828;">234</div></div>
     <div class="kpi-card" style="border-color:#1565c0;"><div class="kpi-label">未退款订单</div><div class="kpi-val" style="color:#1565c0;">1136</div></div>
     <div class="kpi-card " style="border-color:#fa7b17;"><div class="kpi-label">退款率（大盘）</div><div class="kpi-val" style="color:#fa7b17;">17.1%</div></div>
@@ -77,83 +80,60 @@ html{scroll-behavior:smooth;}
     </tr></thead>
     <tbody><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#3d1a78;"></span>最小年轮</td>
-    <td>716</td>
-    <td>660</td>
-    <td>138</td>
-    <td>578</td>
+    <td>716</td><td>527</td><td>138</td><td>578</td>
     <td >19.3%</td>
     <td >45.1%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#0d47a1;"></span>格物致知</td>
-    <td>321</td>
-    <td>302</td>
-    <td>43</td>
-    <td>278</td>
+    <td>321</td><td>259</td><td>43</td><td>278</td>
     <td >13.4%</td>
     <td >45.2%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#1a6e3d;"></span>领航</td>
-    <td>208</td>
-    <td>157</td>
-    <td>36</td>
-    <td>172</td>
+    <td>208</td><td>123</td><td>36</td><td>172</td>
     <td >17.3%</td>
     <td >36.1%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#6d4c41;"></span>福哥电商</td>
-    <td>67</td>
-    <td>63</td>
-    <td>11</td>
-    <td>56</td>
+    <td>67</td><td>53</td><td>11</td><td>56</td>
     <td >16.4%</td>
     <td >46.3%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#e65100;"></span>杭州三只咪</td>
-    <td>39</td>
-    <td>36</td>
-    <td>3</td>
-    <td>36</td>
+    <td>39</td><td>33</td><td>3</td><td>36</td>
     <td >7.7%</td>
     <td >48.7%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#00838f;"></span>自然流</td>
-    <td>15</td>
-    <td>6</td>
-    <td>2</td>
-    <td>13</td>
+    <td>15</td><td>5</td><td>2</td><td>13</td>
     <td >13.3%</td>
     <td >20.0%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#6a1a78;"></span>合肥徽起</td>
-    <td>3</td>
-    <td>3</td>
-    <td>1</td>
-    <td>2</td>
+    <td>3</td><td>2</td><td>1</td><td>2</td>
     <td class="alert-cell">33.3%</td>
     <td >33.3%</td>
     <td >N/A</td>
   </tr><tr>
     <td style="text-align:left;padding:9px 14px;font-weight:600;"><span class="ch-dot" style="background:#aaa;"></span>未知渠道</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>1</td>
+    <td>1</td><td>1</td><td>0</td><td>1</td>
     <td >0.0%</td>
     <td >100.0%</td>
     <td >N/A</td>
   </tr></tbody></table></div>
 
   <h3 class="sub-title">各渠道达人明细</h3>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #3d1a78;">
       最小年轮 <span class="ch-badge">716单</span>
       <span class="ch-badge" style="">退款率 19.3%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -162,225 +142,154 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">李老师讲初升高</td>
-      <td>185</td>
-      <td>170</td>
-      <td>40</td>
-      <td>145</td>
+      <td>185</td><td>131</td><td>40</td><td>145</td>
       <td class="alert-cell">21.6%</td>
       <td >43.2%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">千佰惠公司聂老师</td>
-      <td>93</td>
-      <td>87</td>
-      <td>19</td>
-      <td>74</td>
+      <td>93</td><td>68</td><td>19</td><td>74</td>
       <td class="alert-cell">20.4%</td>
       <td >55.9%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">一线王老师讲选科</td>
-      <td>91</td>
-      <td>89</td>
-      <td>20</td>
-      <td>71</td>
+      <td>91</td><td>70</td><td>20</td><td>71</td>
       <td class="alert-cell">22.0%</td>
       <td >44.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">刘老师讲中考a</td>
-      <td>55</td>
-      <td>49</td>
-      <td>14</td>
-      <td>41</td>
+      <td>55</td><td>35</td><td>14</td><td>41</td>
       <td class="alert-cell">25.5%</td>
       <td >45.5%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">郝老师聊选科-行知</td>
-      <td>40</td>
-      <td>33</td>
-      <td>9</td>
-      <td>31</td>
+      <td>40</td><td>25</td><td>9</td><td>31</td>
       <td class="alert-cell">22.5%</td>
       <td >45.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">行知老师讲规划</td>
-      <td>35</td>
-      <td>32</td>
-      <td>10</td>
-      <td>25</td>
+      <td>35</td><td>22</td><td>10</td><td>25</td>
       <td class="alert-cell">28.6%</td>
       <td >37.1%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">蔡稳稳</td>
-      <td>29</td>
-      <td>28</td>
-      <td>1</td>
-      <td>28</td>
+      <td>29</td><td>27</td><td>1</td><td>28</td>
       <td >3.4%</td>
       <td >44.8%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">董老师讲选科</td>
-      <td>28</td>
-      <td>27</td>
-      <td>6</td>
-      <td>22</td>
+      <td>28</td><td>22</td><td>6</td><td>22</td>
       <td class="alert-cell">21.4%</td>
       <td >53.6%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">田老师讲选科</td>
-      <td>22</td>
-      <td>21</td>
-      <td>7</td>
-      <td>15</td>
+      <td>22</td><td>15</td><td>7</td><td>15</td>
       <td class="alert-cell">31.8%</td>
       <td >36.4%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">珊伊老师讲高考</td>
-      <td>21</td>
-      <td>21</td>
-      <td>4</td>
-      <td>17</td>
+      <td>21</td><td>17</td><td>4</td><td>17</td>
       <td >19.0%</td>
       <td >52.4%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">升学规划.田雨</td>
-      <td>19</td>
-      <td>16</td>
-      <td>0</td>
-      <td>19</td>
+      <td>19</td><td>16</td><td>0</td><td>19</td>
       <td >0.0%</td>
       <td >26.3%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">晶晶老师升学规划</td>
-      <td>19</td>
-      <td>18</td>
-      <td>1</td>
-      <td>18</td>
+      <td>19</td><td>17</td><td>1</td><td>18</td>
       <td >5.3%</td>
       <td >52.6%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">初升高升学规划</td>
-      <td>18</td>
-      <td>16</td>
-      <td>1</td>
-      <td>17</td>
+      <td>18</td><td>15</td><td>1</td><td>17</td>
       <td >5.6%</td>
       <td >33.3%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">未知达人</td>
-      <td>12</td>
-      <td>9</td>
-      <td>1</td>
-      <td>11</td>
+      <td>12</td><td>8</td><td>1</td><td>11</td>
       <td >8.3%</td>
       <td >58.3%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">初升高升学规划.</td>
-      <td>12</td>
-      <td>11</td>
-      <td>0</td>
-      <td>12</td>
+      <td>12</td><td>11</td><td>0</td><td>12</td>
       <td >0.0%</td>
       <td >66.7%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">王老师说选科</td>
-      <td>10</td>
-      <td>9</td>
-      <td>2</td>
-      <td>8</td>
+      <td>10</td><td>7</td><td>2</td><td>8</td>
       <td >20.0%</td>
       <td >50.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">宁老师讲选科</td>
-      <td>7</td>
-      <td>7</td>
-      <td>2</td>
-      <td>5</td>
+      <td>7</td><td>5</td><td>2</td><td>5</td>
       <td class="alert-cell">28.6%</td>
       <td >42.9%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">张老师高考规划</td>
-      <td>7</td>
-      <td>7</td>
-      <td>0</td>
-      <td>7</td>
+      <td>7</td><td>7</td><td>0</td><td>7</td>
       <td >0.0%</td>
       <td class="alert-cell">0.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">高阶三规划</td>
-      <td>5</td>
-      <td>5</td>
-      <td>0</td>
-      <td>5</td>
+      <td>5</td><td>5</td><td>0</td><td>5</td>
       <td >0.0%</td>
       <td >20.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">赵老师讲选科</td>
-      <td>4</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4</td>
+      <td>4</td><td>1</td><td>0</td><td>4</td>
       <td >0.0%</td>
       <td >25.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">许老师清北思维</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td class="alert-cell">0.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">超超老师讲选科</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1</td><td>0</td><td>1</td><td>0</td>
       <td class="alert-cell">100.0%</td>
       <td class="alert-cell">0.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">升学规划成丰袁老师</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">黄老师讲选科</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #0d47a1;">
       格物致知 <span class="ch-badge">321单</span>
       <span class="ch-badge" style="">退款率 13.4%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -389,36 +298,28 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">樊老师读书分享</td>
-      <td>147</td>
-      <td>139</td>
-      <td>16</td>
-      <td>131</td>
+      <td>147</td><td>123</td><td>16</td><td>131</td>
       <td >10.9%</td>
       <td >42.9%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">刘主任升学问答（哔哒教育）</td>
-      <td>116</td>
-      <td>110</td>
-      <td>20</td>
-      <td>96</td>
+      <td>116</td><td>90</td><td>20</td><td>96</td>
       <td >17.2%</td>
       <td >49.1%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">文老师升学规划课堂</td>
-      <td>58</td>
-      <td>53</td>
-      <td>7</td>
-      <td>51</td>
+      <td>58</td><td>46</td><td>7</td><td>51</td>
       <td >12.1%</td>
       <td >43.1%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #1a6e3d;">
       领航 <span class="ch-badge">208单</span>
       <span class="ch-badge" style="">退款率 17.3%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -427,99 +328,70 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">升学规划雯老师-泓图</td>
-      <td>46</td>
-      <td>44</td>
-      <td>10</td>
-      <td>36</td>
+      <td>46</td><td>34</td><td>10</td><td>36</td>
       <td class="alert-cell">21.7%</td>
       <td >56.5%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">赵主任讲女生规划</td>
-      <td>37</td>
-      <td>35</td>
-      <td>4</td>
-      <td>33</td>
+      <td>37</td><td>31</td><td>4</td><td>33</td>
       <td >10.8%</td>
       <td >43.2%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">马老师升学规划</td>
-      <td>33</td>
-      <td>31</td>
-      <td>13</td>
-      <td>20</td>
+      <td>33</td><td>18</td><td>13</td><td>20</td>
       <td class="alert-cell">39.4%</td>
       <td >39.4%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">高中生升学规划</td>
-      <td>23</td>
-      <td>5</td>
-      <td>3</td>
-      <td>20</td>
+      <td>23</td><td>4</td><td>3</td><td>20</td>
       <td >13.0%</td>
       <td class="alert-cell">4.3%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">刘老师升学规划</td>
-      <td>23</td>
-      <td>11</td>
-      <td>2</td>
-      <td>21</td>
+      <td>23</td><td>9</td><td>2</td><td>21</td>
       <td >8.7%</td>
       <td >17.4%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">高中班主任张老师升学</td>
-      <td>18</td>
-      <td>6</td>
-      <td>1</td>
-      <td>17</td>
+      <td>18</td><td>5</td><td>1</td><td>17</td>
       <td >5.6%</td>
       <td >22.2%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">陈老师升学规划</td>
-      <td>12</td>
-      <td>9</td>
-      <td>1</td>
-      <td>11</td>
+      <td>12</td><td>8</td><td>1</td><td>11</td>
       <td >8.3%</td>
       <td >41.7%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">小满老师讲选科规划🎓</td>
-      <td>9</td>
-      <td>9</td>
-      <td>0</td>
-      <td>9</td>
+      <td>9</td><td>9</td><td>0</td><td>9</td>
       <td >0.0%</td>
       <td >11.1%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">升学规划白老师</td>
-      <td>6</td>
-      <td>6</td>
-      <td>1</td>
-      <td>5</td>
+      <td>6</td><td>5</td><td>1</td><td>5</td>
       <td >16.7%</td>
       <td >83.3%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">付老师生涯规划</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1</td><td>0</td><td>1</td><td>0</td>
       <td class="alert-cell">100.0%</td>
       <td class="alert-cell">0.0%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #6d4c41;">
       福哥电商 <span class="ch-badge">67单</span>
       <span class="ch-badge" style="">退款率 16.4%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -528,18 +400,16 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">步步高就-聊聊初升高</td>
-      <td>67</td>
-      <td>63</td>
-      <td>11</td>
-      <td>56</td>
+      <td>67</td><td>53</td><td>11</td><td>56</td>
       <td >16.4%</td>
       <td >46.3%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #e65100;">
       杭州三只咪 <span class="ch-badge">39单</span>
       <span class="ch-badge" style="">退款率 7.7%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -548,99 +418,70 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">刘老师思维课堂88</td>
-      <td>25</td>
-      <td>24</td>
-      <td>3</td>
-      <td>22</td>
+      <td>25</td><td>21</td><td>3</td><td>22</td>
       <td >12.0%</td>
       <td >44.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">小满老师思维课堂</td>
-      <td>3</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
+      <td>3</td><td>1</td><td>0</td><td>3</td>
       <td >0.0%</td>
       <td >33.3%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">未知达人</td>
-      <td>3</td>
-      <td>3</td>
-      <td>0</td>
-      <td>3</td>
+      <td>3</td><td>3</td><td>0</td><td>3</td>
       <td >0.0%</td>
       <td >66.7%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">浙大奥数莉莉老师</td>
-      <td>2</td>
-      <td>2</td>
-      <td>0</td>
-      <td>2</td>
+      <td>2</td><td>2</td><td>0</td><td>2</td>
       <td >0.0%</td>
       <td >50.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">浙大奥数陈老师</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">宋老师思维学习力</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">罗老师讲思维（三只咪 ）</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td class="alert-cell">0.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">韩老师满分思维课</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">魏老师思维课堂999</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td class="alert-cell">0.0%</td>
       <td >N/A</td>
     </tr><tr>
       <td style="text-align:left;padding:8px 14px;">姗姗老师1129</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #00838f;">
       自然流 <span class="ch-badge">15单</span>
       <span class="ch-badge" style="">退款率 13.3%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -649,18 +490,16 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">未知达人</td>
-      <td>15</td>
-      <td>6</td>
-      <td>2</td>
-      <td>13</td>
+      <td>15</td><td>5</td><td>2</td><td>13</td>
       <td >13.3%</td>
       <td >20.0%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #6a1a78;">
       合肥徽起 <span class="ch-badge">3单</span>
       <span class="ch-badge" style="background:#fde8e8;color:#c62828;">退款率 33.3%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -669,18 +508,16 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">初升高入团规划大课堂</td>
-      <td>3</td>
-      <td>3</td>
-      <td>1</td>
-      <td>2</td>
+      <td>3</td><td>2</td><td>1</td><td>2</td>
       <td class="alert-cell">33.3%</td>
       <td >33.3%</td>
       <td >N/A</td>
     </tr></tbody></table></div></details>
-  <details class="ch-block" open>
+  <details class="ch-block">
     <summary class="ch-summary" style="border-left:4px solid #aaa;">
       未知渠道 <span class="ch-badge">1单</span>
       <span class="ch-badge" style="">退款率 0.0%</span>
+      <span class="expand-hint">点击展开 ▶</span>
     </summary>
     <div class="table-wrap" style="border-radius:0 0 8px 8px;">
     <table>
@@ -689,10 +526,7 @@ html{scroll-behavior:smooth;}
       </tr></thead>
       <tbody><tr>
       <td style="text-align:left;padding:8px 14px;">未知达人</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
       <td >0.0%</td>
       <td >100.0%</td>
       <td >N/A</td>
@@ -728,626 +562,709 @@ html{scroll-behavior:smooth;}
 
 <div id="channel-summary" class="section">
   <h2 class="sec-title">③ 渠道数据汇总（正常班）</h2>
-  <div class="tip">仅统计正常班的订单，按渠道 / 二级渠道 / 达人 / 年级下钻</div>
-  <div class="table-wrap"><table>
-    <thead><tr class="thead-purple">
-      <th>直播号代理</th><th>二级渠道</th><th>达人名称</th>
-      <th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
-    </tr></thead>
-    <tbody><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#3d1a78;"></span>最小年轮</td>
-    <td></td><td></td>
-    <td>533</td><td>105</td><td>22</td>
-    <td style="font-weight:800;">660</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+  <div class="tip">仅统计正常班，按渠道 / 二级渠道 / 达人 / 年级下钻 &nbsp;｜&nbsp; 点击渠道行展开达人详情</div>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #3d1a78;">
+      <span class="ch-dot" style="background:#3d1a78;"></span>最小年轮
+      <span class="ch-badge">正常班 527单</span>
+      <span class="ch-badge">初三 424 / 高一 89 / 高二 14</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
-      <td>521</td><td>94</td><td>21</td>
-      <td style="font-weight:700;">636</td>
+      <td>412</td><td>78</td><td>13</td>
+      <td style="font-weight:700;">503</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">李老师讲初升高</td>
-        <td>164</td><td>1</td><td>5</td>
-        <td>170</td>
+        <td>130</td><td>0</td><td>1</td>
+        <td>131</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">一线王老师讲选科</td>
-        <td>45</td><td>42</td><td>2</td>
-        <td>89</td>
+        <td>33</td><td>36</td><td>1</td>
+        <td>70</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">千佰惠公司聂老师</td>
-        <td>83</td><td>4</td><td>0</td>
-        <td>87</td>
+        <td>67</td><td>1</td><td>0</td>
+        <td>68</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">刘老师讲中考a</td>
-        <td>49</td><td>0</td><td>0</td>
-        <td>49</td>
+        <td>35</td><td>0</td><td>0</td>
+        <td>35</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">郝老师聊选科-行知</td>
-        <td>20</td><td>12</td><td>1</td>
-        <td>33</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">行知老师讲规划</td>
-        <td>24</td><td>7</td><td>1</td>
-        <td>32</td>
-      </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">蔡稳稳</td>
-        <td>28</td><td>0</td><td>0</td>
-        <td>28</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">董老师讲选科</td>
-        <td>24</td><td>3</td><td>0</td>
+        <td>27</td><td>0</td><td>0</td>
         <td>27</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">田老师讲选科</td>
-        <td>15</td><td>6</td><td>0</td>
-        <td>21</td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">郝老师聊选科-行知</td>
+        <td>15</td><td>9</td><td>1</td>
+        <td>25</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">行知老师讲规划</td>
+        <td>16</td><td>5</td><td>1</td>
+        <td>22</td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">董老师讲选科</td>
+        <td>20</td><td>2</td><td>0</td>
+        <td>22</td>
+      </tr><tr>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">珊伊老师讲高考</td>
-        <td>9</td><td>9</td><td>3</td>
-        <td>21</td>
+        <td>8</td><td>9</td><td>0</td>
+        <td>17</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">晶晶老师升学规划</td>
-        <td>9</td><td>5</td><td>4</td>
-        <td>18</td>
+        <td>8</td><td>5</td><td>4</td>
+        <td>17</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">初升高升学规划</td>
-        <td>16</td><td>0</td><td>0</td>
-        <td>16</td>
+        <td>15</td><td>0</td><td>0</td>
+        <td>15</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">田老师讲选科</td>
+        <td>9</td><td>6</td><td>0</td>
+        <td>15</td>
+      </tr><tr>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">初升高升学规划.</td>
         <td>11</td><td>0</td><td>0</td>
         <td>11</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">王老师说选科</td>
-        <td>7</td><td>2</td><td>0</td>
-        <td>9</td>
-      </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">未知达人</td>
-        <td>8</td><td>1</td><td>0</td>
-        <td>9</td>
+        <td>7</td><td>1</td><td>0</td>
+        <td>8</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">宁老师讲选科</td>
-        <td>6</td><td>1</td><td>0</td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">王老师说选科</td>
+        <td>5</td><td>2</td><td>0</td>
         <td>7</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">高阶三规划</td>
         <td>0</td><td>0</td><td>5</td>
         <td>5</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">许老师清北思维</td>
-        <td>1</td><td>0</td><td>0</td>
-        <td>1</td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">宁老师讲选科</td>
+        <td>4</td><td>1</td><td>0</td>
+        <td>5</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">黄老师讲选科</td>
         <td>0</td><td>1</td><td>0</td>
         <td>1</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">超超老师讲选科</td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">许老师清北思维</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">升学规划成丰袁老师</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
       </tr><tr style="background:#f5f0ff;">
-      <td></td>
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">视频号小店</td><td></td>
       <td>12</td><td>11</td><td>1</td>
       <td style="font-weight:700;">24</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">升学规划.田雨</td>
         <td>9</td><td>6</td><td>1</td>
         <td>16</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">张老师高考规划</td>
         <td>2</td><td>5</td><td>0</td>
         <td>7</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">赵老师讲选科</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#0d47a1;"></span>格物致知</td>
-    <td></td><td></td>
-    <td>299</td><td>1</td><td>2</td>
-    <td style="font-weight:800;">302</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #0d47a1;">
+      <span class="ch-dot" style="background:#0d47a1;"></span>格物致知
+      <span class="ch-badge">正常班 259单</span>
+      <span class="ch-badge">初三 258 / 高一 1 / 高二 0</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
-      <td>163</td><td>0</td><td>0</td>
-      <td style="font-weight:700;">163</td>
+      <td>136</td><td>0</td><td>0</td>
+      <td style="font-weight:700;">136</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">刘主任升学问答（哔哒教育）</td>
-        <td>110</td><td>0</td><td>0</td>
-        <td>110</td>
+        <td>90</td><td>0</td><td>0</td>
+        <td>90</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">文老师升学规划课堂</td>
-        <td>53</td><td>0</td><td>0</td>
-        <td>53</td>
+        <td>46</td><td>0</td><td>0</td>
+        <td>46</td>
       </tr><tr style="background:#f5f0ff;">
-      <td></td>
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">视频号小店</td><td></td>
-      <td>136</td><td>1</td><td>2</td>
-      <td style="font-weight:700;">139</td>
+      <td>122</td><td>1</td><td>0</td>
+      <td style="font-weight:700;">123</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">樊老师读书分享</td>
-        <td>136</td><td>1</td><td>2</td>
-        <td>139</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#1a6e3d;"></span>领航</td>
-    <td></td><td></td>
-    <td>73</td><td>68</td><td>16</td>
-    <td style="font-weight:800;">157</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+        <td>122</td><td>1</td><td>0</td>
+        <td>123</td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #1a6e3d;">
+      <span class="ch-dot" style="background:#1a6e3d;"></span>领航
+      <span class="ch-badge">正常班 123单</span>
+      <span class="ch-badge">初三 54 / 高一 54 / 高二 15</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
-      <td>67</td><td>48</td><td>7</td>
-      <td style="font-weight:700;">122</td>
+      <td>48</td><td>38</td><td>6</td>
+      <td style="font-weight:700;">92</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">升学规划雯老师-泓图</td>
-        <td>32</td><td>9</td><td>3</td>
-        <td>44</td>
+        <td>24</td><td>7</td><td>3</td>
+        <td>34</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">马老师升学规划</td>
-        <td>24</td><td>7</td><td>0</td>
-        <td>31</td>
+        <td>13</td><td>5</td><td>0</td>
+        <td>18</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">刘老师升学规划</td>
-        <td>3</td><td>8</td><td>0</td>
-        <td>11</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">陈老师升学规划</td>
-        <td>2</td><td>7</td><td>0</td>
-        <td>9</td>
-      </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">小满老师讲选科规划🎓</td>
         <td>4</td><td>3</td><td>2</td>
         <td>9</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">刘老师升学规划</td>
+        <td>3</td><td>6</td><td>0</td>
+        <td>9</td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">陈老师升学规划</td>
+        <td>2</td><td>6</td><td>0</td>
+        <td>8</td>
+      </tr><tr>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">升学规划白老师</td>
-        <td>0</td><td>6</td><td>0</td>
-        <td>6</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">高中班主任张老师升学</td>
-        <td>1</td><td>4</td><td>1</td>
-        <td>6</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">高中生升学规划</td>
-        <td>1</td><td>4</td><td>0</td>
+        <td>0</td><td>5</td><td>0</td>
         <td>5</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">付老师生涯规划</td>
-        <td>0</td><td>0</td><td>1</td>
-        <td>1</td>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">高中班主任张老师升学</td>
+        <td>1</td><td>3</td><td>1</td>
+        <td>5</td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">高中生升学规划</td>
+        <td>1</td><td>3</td><td>0</td>
+        <td>4</td>
       </tr><tr style="background:#f5f0ff;">
-      <td></td>
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">视频号小店</td><td></td>
-      <td>6</td><td>20</td><td>9</td>
-      <td style="font-weight:700;">35</td>
+      <td>6</td><td>16</td><td>9</td>
+      <td style="font-weight:700;">31</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">赵主任讲女生规划</td>
-        <td>6</td><td>20</td><td>9</td>
-        <td>35</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#6d4c41;"></span>福哥电商</td>
-    <td></td><td></td>
-    <td>62</td><td>0</td><td>1</td>
-    <td style="font-weight:800;">63</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+        <td>6</td><td>16</td><td>9</td>
+        <td>31</td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #6d4c41;">
+      <span class="ch-dot" style="background:#6d4c41;"></span>福哥电商
+      <span class="ch-badge">正常班 53单</span>
+      <span class="ch-badge">初三 53 / 高一 0 / 高二 0</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
-      <td>62</td><td>0</td><td>1</td>
-      <td style="font-weight:700;">63</td>
+      <td>53</td><td>0</td><td>0</td>
+      <td style="font-weight:700;">53</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">步步高就-聊聊初升高</td>
-        <td>62</td><td>0</td><td>1</td>
-        <td>63</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#e65100;"></span>杭州三只咪</td>
-    <td></td><td></td>
-    <td>31</td><td>3</td><td>2</td>
-    <td style="font-weight:800;">36</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+        <td>53</td><td>0</td><td>0</td>
+        <td>53</td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #e65100;">
+      <span class="ch-dot" style="background:#e65100;"></span>杭州三只咪
+      <span class="ch-badge">正常班 33单</span>
+      <span class="ch-badge">初三 28 / 高一 3 / 高二 2</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
       <td>2</td><td>2</td><td>2</td>
       <td style="font-weight:700;">6</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">未知达人</td>
         <td>1</td><td>1</td><td>1</td>
         <td>3</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">罗老师讲思维（三只咪 ）</td>
         <td>0</td><td>0</td><td>1</td>
         <td>1</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">宋老师思维学习力</td>
         <td>0</td><td>1</td><td>0</td>
         <td>1</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">浙大奥数莉莉老师</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
       </tr><tr style="background:#f5f0ff;">
-      <td></td>
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">视频号小店</td><td></td>
-      <td>29</td><td>1</td><td>0</td>
-      <td style="font-weight:700;">30</td>
+      <td>26</td><td>1</td><td>0</td>
+      <td style="font-weight:700;">27</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">刘老师思维课堂88</td>
-        <td>23</td><td>1</td><td>0</td>
-        <td>24</td>
+        <td>20</td><td>1</td><td>0</td>
+        <td>21</td>
       </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">韩老师满分思维课</td>
-        <td>1</td><td>0</td><td>0</td>
-        <td>1</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">浙大奥数陈老师</td>
-        <td>1</td><td>0</td><td>0</td>
-        <td>1</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">姗姗老师1129</td>
-        <td>1</td><td>0</td><td>0</td>
-        <td>1</td>
-      </tr><tr>
-        <td></td><td></td>
-        <td style="padding:7px 14px;text-align:left;">小满老师思维课堂</td>
-        <td>1</td><td>0</td><td>0</td>
-        <td>1</td>
-      </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">魏老师思维课堂999</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
       </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">浙大奥数莉莉老师</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#00838f;"></span>自然流</td>
-    <td></td><td></td>
-    <td>5</td><td>1</td><td>0</td>
-    <td style="font-weight:800;">6</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">韩老师满分思维课</td>
+        <td>1</td><td>0</td><td>0</td>
+        <td>1</td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">姗姗老师1129</td>
+        <td>1</td><td>0</td><td>0</td>
+        <td>1</td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">小满老师思维课堂</td>
+        <td>1</td><td>0</td><td>0</td>
+        <td>1</td>
+      </tr><tr>
+        <td></td>
+        <td style="padding:7px 14px;text-align:left;">浙大奥数陈老师</td>
+        <td>1</td><td>0</td><td>0</td>
+        <td>1</td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #00838f;">
+      <span class="ch-dot" style="background:#00838f;"></span>自然流
+      <span class="ch-badge">正常班 5单</span>
+      <span class="ch-badge">初三 5 / 高一 0 / 高二 0</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
-      <td>4</td><td>1</td><td>0</td>
-      <td style="font-weight:700;">5</td>
+      <td>4</td><td>0</td><td>0</td>
+      <td style="font-weight:700;">4</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">未知达人</td>
-        <td>4</td><td>1</td><td>0</td>
-        <td>5</td>
+        <td>4</td><td>0</td><td>0</td>
+        <td>4</td>
       </tr><tr style="background:#f5f0ff;">
-      <td></td>
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">视频号小店</td><td></td>
       <td>1</td><td>0</td><td>0</td>
       <td style="font-weight:700;">1</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">未知达人</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#6a1a78;"></span>合肥徽起</td>
-    <td></td><td></td>
-    <td>2</td><td>0</td><td>1</td>
-    <td style="font-weight:800;">3</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #6a1a78;">
+      <span class="ch-dot" style="background:#6a1a78;"></span>合肥徽起
+      <span class="ch-badge">正常班 2单</span>
+      <span class="ch-badge">初三 1 / 高一 0 / 高二 1</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">视频号小店</td><td></td>
-      <td>2</td><td>0</td><td>1</td>
-      <td style="font-weight:700;">3</td>
+      <td>1</td><td>0</td><td>1</td>
+      <td style="font-weight:700;">2</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">初升高入团规划大课堂</td>
-        <td>2</td><td>0</td><td>1</td>
-        <td>3</td>
-      </tr><tr style="background:#e8d5ff;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#aaa;"></span>未知渠道</td>
-    <td></td><td></td>
-    <td>1</td><td>0</td><td>0</td>
-    <td style="font-weight:800;">1</td>
-  </tr><tr style="background:#f5f0ff;">
-      <td></td>
+        <td>1</td><td>0</td><td>1</td>
+        <td>2</td>
+      </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #aaa;">
+      <span class="ch-dot" style="background:#aaa;"></span>未知渠道
+      <span class="ch-badge">正常班 1单</span>
+      <span class="ch-badge">初三 1 / 高一 0 / 高二 0</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#ede7f6;color:#4a148c;">
+        <th>二级渠道</th><th>达人名称</th><th>初三(9)</th><th>高一(10)</th><th>高二(11)</th><th>合计</th>
+      </tr></thead>
+      <tbody><tr style="background:#f5f0ff;">
       <td style="padding:7px 14px;font-weight:600;text-align:left;color:#5c2d91;">抖音小店</td><td></td>
       <td>1</td><td>0</td><td>0</td>
       <td style="font-weight:700;">1</td>
     </tr><tr>
-        <td></td><td></td>
+        <td></td>
         <td style="padding:7px 14px;text-align:left;">未知达人</td>
         <td>1</td><td>0</td><td>0</td>
         <td>1</td>
-      </tr><tr class="thead-purple" style="font-weight:800;">
-  <td style="padding:10px 14px;text-align:left;">总计</td><td></td><td></td>
-  <td>1006</td><td>178</td><td>44</td>
-  <td>1228</td>
-</tr></tbody></table></div></div>
+      </tr></tbody></table></div></details>
+  <div class="table-wrap" style="margin-top:8px;"><table>
+    <thead><tr class="thead-purple" style="font-weight:800;">
+      <th style="text-align:left;padding:10px 14px;">总计</th><th></th>
+      <th>824</th><th>147</th><th>32</th><th>1003</th>
+    </tr></thead>
+  </table></div>
+</div>
 
 <div id="channel-date" class="section">
-  <h2 class="sec-title">④ 分渠道 × 分日期（正常班）</h2>
-  <div class="table-wrap"><table>
-    <thead><tr class="thead-green">
-      <th>直播号代理</th><th>达人名称</th>
-      <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
-      <th>合计</th>
-    </tr></thead>
-    <tbody><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#3d1a78;"></span>最小年轮</td>
-    <td></td><td>0</td><td>8</td><td>11</td><td>39</td><td>183</td><td>220</td><td>255</td><td style="font-weight:800;">716</td>
-  </tr><tr>
-      <td></td>
+  <h2 class="sec-title">④ 分渠道 × 分日期（全量订单）</h2>
+  <div class="tip">点击渠道行展开达人详情</div>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #3d1a78;">
+      <span class="ch-dot" style="background:#3d1a78;"></span>最小年轮
+      <span class="ch-badge">合计 716单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">李老师讲初升高</td>
-      <td>0</td><td>3</td><td>4</td><td>0</td><td>60</td><td>53</td><td>65</td><td>185</td>
+      <td>0</td><td>3</td><td>4</td><td>0</td><td>60</td><td>53</td><td>65</td><td style="font-weight:700;">185</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">千佰惠公司聂老师</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>25</td><td>45</td><td>23</td><td>93</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>25</td><td>45</td><td>23</td><td style="font-weight:700;">93</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">一线王老师讲选科</td>
-      <td>0</td><td>0</td><td>0</td><td>6</td><td>33</td><td>25</td><td>27</td><td>91</td>
+      <td>0</td><td>0</td><td>0</td><td>6</td><td>33</td><td>25</td><td>27</td><td style="font-weight:700;">91</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">刘老师讲中考a</td>
-      <td>0</td><td>2</td><td>2</td><td>0</td><td>6</td><td>18</td><td>27</td><td>55</td>
+      <td>0</td><td>2</td><td>2</td><td>0</td><td>6</td><td>18</td><td>27</td><td style="font-weight:700;">55</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">郝老师聊选科-行知</td>
-      <td>0</td><td>2</td><td>1</td><td>1</td><td>12</td><td>6</td><td>18</td><td>40</td>
+      <td>0</td><td>2</td><td>1</td><td>1</td><td>12</td><td>6</td><td>18</td><td style="font-weight:700;">40</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">行知老师讲规划</td>
-      <td>0</td><td>0</td><td>1</td><td>4</td><td>12</td><td>6</td><td>12</td><td>35</td>
+      <td>0</td><td>0</td><td>1</td><td>4</td><td>12</td><td>6</td><td>12</td><td style="font-weight:700;">35</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">蔡稳稳</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>29</td><td>0</td><td>29</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>29</td><td>0</td><td style="font-weight:700;">29</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">董老师讲选科</td>
-      <td>0</td><td>1</td><td>0</td><td>4</td><td>9</td><td>0</td><td>14</td><td>28</td>
+      <td>0</td><td>1</td><td>0</td><td>4</td><td>9</td><td>0</td><td>14</td><td style="font-weight:700;">28</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">田老师讲选科</td>
-      <td>0</td><td>0</td><td>0</td><td>1</td><td>4</td><td>0</td><td>17</td><td>22</td>
+      <td>0</td><td>0</td><td>0</td><td>1</td><td>4</td><td>0</td><td>17</td><td style="font-weight:700;">22</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">珊伊老师讲高考</td>
-      <td>0</td><td>0</td><td>0</td><td>5</td><td>6</td><td>5</td><td>5</td><td>21</td>
+      <td>0</td><td>0</td><td>0</td><td>5</td><td>6</td><td>5</td><td>5</td><td style="font-weight:700;">21</td>
     </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">升学规划.田雨</td>
-      <td>0</td><td>0</td><td>2</td><td>2</td><td>0</td><td>7</td><td>8</td><td>19</td>
-    </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">晶晶老师升学规划</td>
-      <td>0</td><td>0</td><td>1</td><td>1</td><td>6</td><td>6</td><td>5</td><td>19</td>
+      <td>0</td><td>0</td><td>1</td><td>1</td><td>6</td><td>6</td><td>5</td><td style="font-weight:700;">19</td>
     </tr><tr>
-      <td></td>
+      <td style="padding:7px 14px;text-align:left;">升学规划.田雨</td>
+      <td>0</td><td>0</td><td>2</td><td>2</td><td>0</td><td>7</td><td>8</td><td style="font-weight:700;">19</td>
+    </tr><tr>
       <td style="padding:7px 14px;text-align:left;">初升高升学规划</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>8</td><td>10</td><td>18</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>8</td><td>10</td><td style="font-weight:700;">18</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">未知达人</td>
-      <td>0</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>0</td><td>12</td>
+      <td>0</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>0</td><td style="font-weight:700;">12</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">初升高升学规划.</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td>12</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td style="font-weight:700;">12</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">王老师说选科</td>
-      <td>0</td><td>0</td><td>0</td><td>2</td><td>6</td><td>2</td><td>0</td><td>10</td>
+      <td>0</td><td>0</td><td>0</td><td>2</td><td>6</td><td>2</td><td>0</td><td style="font-weight:700;">10</td>
     </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">张老师高考规划</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>7</td><td>7</td>
-    </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">宁老师讲选科</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>4</td><td>7</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>4</td><td style="font-weight:700;">7</td>
     </tr><tr>
-      <td></td>
+      <td style="padding:7px 14px;text-align:left;">张老师高考规划</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>7</td><td style="font-weight:700;">7</td>
+    </tr><tr>
       <td style="padding:7px 14px;text-align:left;">高阶三规划</td>
-      <td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td>5</td>
+      <td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td style="font-weight:700;">5</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">赵老师讲选科</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>4</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td style="font-weight:700;">4</td>
     </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">许老师清北思维</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
-    </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">黄老师讲选科</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td style="font-weight:700;">1</td>
     </tr><tr>
-      <td></td>
+      <td style="padding:7px 14px;text-align:left;">许老师清北思维</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td style="font-weight:700;">1</td>
+    </tr><tr>
       <td style="padding:7px 14px;text-align:left;">超超老师讲选科</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td style="font-weight:700;">1</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">升学规划成丰袁老师</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#0d47a1;"></span>格物致知</td>
-    <td></td><td>0</td><td>1</td><td>3</td><td>52</td><td>30</td><td>130</td><td>105</td><td style="font-weight:800;">321</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td style="font-weight:700;">1</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">8</td><td style="font-weight:700;">11</td><td style="font-weight:700;">39</td><td style="font-weight:700;">183</td><td style="font-weight:700;">220</td><td style="font-weight:700;">255</td><td style="font-weight:800;color:#1a6e3d;">716</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #0d47a1;">
+      <span class="ch-dot" style="background:#0d47a1;"></span>格物致知
+      <span class="ch-badge">合计 321单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">樊老师读书分享</td>
-      <td>0</td><td>0</td><td>3</td><td>49</td><td>30</td><td>40</td><td>25</td><td>147</td>
+      <td>0</td><td>0</td><td>3</td><td>49</td><td>30</td><td>40</td><td>25</td><td style="font-weight:700;">147</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">刘主任升学问答（哔哒教育）</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>56</td><td>60</td><td>116</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>56</td><td>60</td><td style="font-weight:700;">116</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">文老师升学规划课堂</td>
-      <td>0</td><td>1</td><td>0</td><td>3</td><td>0</td><td>34</td><td>20</td><td>58</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#1a6e3d;"></span>领航</td>
-    <td></td><td>2</td><td>11</td><td>9</td><td>51</td><td>66</td><td>42</td><td>27</td><td style="font-weight:800;">208</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>1</td><td>0</td><td>3</td><td>0</td><td>34</td><td>20</td><td style="font-weight:700;">58</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">1</td><td style="font-weight:700;">3</td><td style="font-weight:700;">52</td><td style="font-weight:700;">30</td><td style="font-weight:700;">130</td><td style="font-weight:700;">105</td><td style="font-weight:800;color:#1a6e3d;">321</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #1a6e3d;">
+      <span class="ch-dot" style="background:#1a6e3d;"></span>领航
+      <span class="ch-badge">合计 208单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">升学规划雯老师-泓图</td>
-      <td>0</td><td>0</td><td>0</td><td>13</td><td>4</td><td>13</td><td>16</td><td>46</td>
+      <td>0</td><td>0</td><td>0</td><td>13</td><td>4</td><td>13</td><td>16</td><td style="font-weight:700;">46</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">赵主任讲女生规划</td>
-      <td>0</td><td>0</td><td>0</td><td>7</td><td>11</td><td>15</td><td>4</td><td>37</td>
+      <td>0</td><td>0</td><td>0</td><td>7</td><td>11</td><td>15</td><td>4</td><td style="font-weight:700;">37</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">马老师升学规划</td>
-      <td>0</td><td>0</td><td>1</td><td>5</td><td>7</td><td>14</td><td>6</td><td>33</td>
+      <td>0</td><td>0</td><td>1</td><td>5</td><td>7</td><td>14</td><td>6</td><td style="font-weight:700;">33</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">刘老师升学规划</td>
-      <td>0</td><td>2</td><td>3</td><td>7</td><td>11</td><td>0</td><td>0</td><td>23</td>
+      <td>0</td><td>2</td><td>3</td><td>7</td><td>11</td><td>0</td><td>0</td><td style="font-weight:700;">23</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">高中生升学规划</td>
-      <td>2</td><td>4</td><td>4</td><td>4</td><td>9</td><td>0</td><td>0</td><td>23</td>
+      <td>2</td><td>4</td><td>4</td><td>4</td><td>9</td><td>0</td><td>0</td><td style="font-weight:700;">23</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">高中班主任张老师升学</td>
-      <td>0</td><td>5</td><td>0</td><td>4</td><td>9</td><td>0</td><td>0</td><td>18</td>
+      <td>0</td><td>5</td><td>0</td><td>4</td><td>9</td><td>0</td><td>0</td><td style="font-weight:700;">18</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">陈老师升学规划</td>
-      <td>0</td><td>0</td><td>1</td><td>3</td><td>8</td><td>0</td><td>0</td><td>12</td>
+      <td>0</td><td>0</td><td>1</td><td>3</td><td>8</td><td>0</td><td>0</td><td style="font-weight:700;">12</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">小满老师讲选科规划🎓</td>
-      <td>0</td><td>0</td><td>0</td><td>2</td><td>6</td><td>0</td><td>1</td><td>9</td>
+      <td>0</td><td>0</td><td>0</td><td>2</td><td>6</td><td>0</td><td>1</td><td style="font-weight:700;">9</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">升学规划白老师</td>
-      <td>0</td><td>0</td><td>0</td><td>6</td><td>0</td><td>0</td><td>0</td><td>6</td>
+      <td>0</td><td>0</td><td>0</td><td>6</td><td>0</td><td>0</td><td>0</td><td style="font-weight:700;">6</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">付老师生涯规划</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#6d4c41;"></span>福哥电商</td>
-    <td></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>67</td><td style="font-weight:800;">67</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td style="font-weight:700;">1</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">2</td><td style="font-weight:700;">11</td><td style="font-weight:700;">9</td><td style="font-weight:700;">51</td><td style="font-weight:700;">66</td><td style="font-weight:700;">42</td><td style="font-weight:700;">27</td><td style="font-weight:800;color:#1a6e3d;">208</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #6d4c41;">
+      <span class="ch-dot" style="background:#6d4c41;"></span>福哥电商
+      <span class="ch-badge">合计 67单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">步步高就-聊聊初升高</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>67</td><td>67</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#e65100;"></span>杭州三只咪</td>
-    <td></td><td>0</td><td>0</td><td>2</td><td>6</td><td>11</td><td>12</td><td>8</td><td style="font-weight:800;">39</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>67</td><td style="font-weight:700;">67</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">67</td><td style="font-weight:800;color:#1a6e3d;">67</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #e65100;">
+      <span class="ch-dot" style="background:#e65100;"></span>杭州三只咪
+      <span class="ch-badge">合计 39单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">刘老师思维课堂88</td>
-      <td>0</td><td>0</td><td>0</td><td>5</td><td>7</td><td>7</td><td>6</td><td>25</td>
+      <td>0</td><td>0</td><td>0</td><td>5</td><td>7</td><td>7</td><td>6</td><td style="font-weight:700;">25</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">未知达人</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>0</td><td>3</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>0</td><td style="font-weight:700;">3</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">小满老师思维课堂</td>
-      <td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>3</td>
+      <td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td style="font-weight:700;">3</td>
     </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">浙大奥数莉莉老师</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>2</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td style="font-weight:700;">2</td>
     </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">宋老师思维学习力</td>
-      <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
-    </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">韩老师满分思维课</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
-    </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">浙大奥数陈老师</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
-    </tr><tr>
-      <td></td>
-      <td style="padding:7px 14px;text-align:left;">姗姗老师1129</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
-    </tr><tr>
-      <td></td>
       <td style="padding:7px 14px;text-align:left;">魏老师思维课堂999</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td style="font-weight:700;">1</td>
     </tr><tr>
-      <td></td>
+      <td style="padding:7px 14px;text-align:left;">姗姗老师1129</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td style="font-weight:700;">1</td>
+    </tr><tr>
+      <td style="padding:7px 14px;text-align:left;">韩老师满分思维课</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td style="font-weight:700;">1</td>
+    </tr><tr>
+      <td style="padding:7px 14px;text-align:left;">宋老师思维学习力</td>
+      <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td style="font-weight:700;">1</td>
+    </tr><tr>
       <td style="padding:7px 14px;text-align:left;">罗老师讲思维（三只咪 ）</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#00838f;"></span>自然流</td>
-    <td></td><td>0</td><td>2</td><td>0</td><td>1</td><td>0</td><td>7</td><td>5</td><td style="font-weight:800;">15</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td style="font-weight:700;">1</td>
+    </tr><tr>
+      <td style="padding:7px 14px;text-align:left;">浙大奥数陈老师</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td style="font-weight:700;">1</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">2</td><td style="font-weight:700;">6</td><td style="font-weight:700;">11</td><td style="font-weight:700;">12</td><td style="font-weight:700;">8</td><td style="font-weight:800;color:#1a6e3d;">39</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #00838f;">
+      <span class="ch-dot" style="background:#00838f;"></span>自然流
+      <span class="ch-badge">合计 15单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">未知达人</td>
-      <td>0</td><td>2</td><td>0</td><td>1</td><td>0</td><td>7</td><td>5</td><td>15</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#6a1a78;"></span>合肥徽起</td>
-    <td></td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td><td style="font-weight:800;">3</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>2</td><td>0</td><td>1</td><td>0</td><td>7</td><td>5</td><td style="font-weight:700;">15</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">2</td><td style="font-weight:700;">0</td><td style="font-weight:700;">1</td><td style="font-weight:700;">0</td><td style="font-weight:700;">7</td><td style="font-weight:700;">5</td><td style="font-weight:800;color:#1a6e3d;">15</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #6a1a78;">
+      <span class="ch-dot" style="background:#6a1a78;"></span>合肥徽起
+      <span class="ch-badge">合计 3单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">初升高入团规划大课堂</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td><td>3</td>
-    </tr><tr style="background:#d4edda;font-weight:700;">
-    <td style="padding:9px 14px;text-align:left;"><span class="ch-dot" style="background:#aaa;"></span>未知渠道</td>
-    <td></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td style="font-weight:800;">1</td>
-  </tr><tr>
-      <td></td>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td><td style="font-weight:700;">3</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">3</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:800;color:#1a6e3d;">3</td>
+  </tr></tbody></table></div></details>
+  <details class="ch-block">
+    <summary class="ch-summary" style="border-left:4px solid #aaa;">
+      <span class="ch-dot" style="background:#aaa;"></span>未知渠道
+      <span class="ch-badge">合计 1单</span>
+      <span class="expand-hint">点击展开 ▶</span>
+    </summary>
+    <div class="table-wrap" style="border-radius:0 0 8px 8px;"><table>
+      <thead><tr style="background:#d4edda;color:#1a6e3d;font-weight:700;">
+        <th>达人名称</th>
+        <th>05-02</th><th>05-03</th><th>05-04</th><th>05-05</th><th>05-06</th><th>05-07</th><th>05-08</th>
+        <th>合计</th>
+      </tr></thead>
+      <tbody><tr>
       <td style="padding:7px 14px;text-align:left;">未知达人</td>
-      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
-    </tr><tr class="thead-green" style="font-weight:800;">
-  <td style="padding:10px 14px;text-align:left;">总计</td><td></td><td>2</td><td>22</td><td>25</td><td>149</td><td>293</td><td>411</td><td>468</td><td>1370</td>
-</tr></tbody></table></div></div>
+      <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td style="font-weight:700;">1</td>
+    </tr><tr style="background:#f0faf4;font-weight:800;">
+    <td style="padding:7px 14px;text-align:left;color:#1a6e3d;">小计</td>
+    <td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">0</td><td style="font-weight:700;">1</td><td style="font-weight:800;color:#1a6e3d;">1</td>
+  </tr></tbody></table></div></details>
+  <div class="table-wrap" style="margin-top:8px;"><table>
+    <thead><tr class="thead-green" style="font-weight:800;">
+      <th style="text-align:left;padding:10px 14px;">总计</th>
+      <th>2</th><th>22</th><th>25</th><th>149</th><th>293</th><th>411</th><th>468</th>
+      <th>1370</th>
+    </tr></thead>
+  </table></div>
+</div>
 </body>
 </html>
